@@ -19,7 +19,7 @@
 [9,]  0.022798143 -0.0241159786 -0.0296694592  0.0001860768 -0.037522758 -0.018248967 -0.007116564  0.0149980355  0.039997643  0.0365563671
 [10,] -0.025520364 -0.0151022102 -0.0062425508 -0.0015610928 -0.018694633  0.020886403  0.029139506  0.0160042733 -0.015586552  0.0168545871
 > cacheSolve(m_cache_matrix) # should return cached value
-retrieving cached inverse
+(retrieving cached inverse)
 [,1]          [,2]          [,3]          [,4]         [,5]         [,6]         [,7]          [,8]         [,9]         [,10]
 [1,]  0.015027238 -0.0189974671  0.0117110800 -0.0114692946 -0.011060304  0.007898446  0.004161659  0.0097225590 -0.007952951 -0.0005963421
 [2,]  0.017498800  0.0008164757 -0.0125947947  0.0534115680 -0.003704107 -0.003010273  0.001103502 -0.0182666295 -0.024632623 -0.0088112062
@@ -99,7 +99,7 @@ cacheSolve <- function(x, ...) {
     # attempt to retrieve cached inverse and return it if possible
     cached_inverse <- x$get_inverse()
     if (!is.null(cached_inverse)) {
-        message("retrieving cached inverse")
+        message("(retrieving cached inverse)")
         return(cached_inverse)
     }
     
