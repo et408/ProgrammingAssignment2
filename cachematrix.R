@@ -1,5 +1,5 @@
 ## This file contains the function pair: makeCacheMatrix and cacheSolve.
-## These functions can be used to calculate and cache the inverse of an invertible matrix.
+## These functions can be used to calculate, cache and retrieve the inverse of an invertible matrix.
 ##
 ## Usage Example
 ## =============
