@@ -104,6 +104,7 @@ cacheSolve <- function(x, ...) {
     }
     
     # calculate, cache and return inverse of x
+    message("(calculating inverse)")
     calculated_inverse <- solve(x$get())
     x$set_inverse(calculated_inverse)
     calculated_inverse
