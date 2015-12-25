@@ -99,7 +99,7 @@ cacheSolve <- function(x, ...) {
     # attempt to retrieve cached inverse and return it if possible
     cached_inverse <- x$get_inverse()
     if (!is.null(cached_inverse)) {
-        message("(retrieving cached inverse)")
+        message("(returning cached inverse)")
         return(cached_inverse)
     }
     
