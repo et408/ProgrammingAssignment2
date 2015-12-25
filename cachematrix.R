@@ -59,7 +59,7 @@
 
 
 
-## makeCacheMatrix creates a function that returns a "matrix" that can cache its inverse
+## makeCacheMatrix creates a function that returns a "matrix" object that can cache its inverse
 makeCacheMatrix <- function(x = matrix()) {
     
     # checks for invalid matrix (NA elements, not square, singular)
