@@ -75,10 +75,6 @@ solveCacheWrapperMatrix <- function(x, ...) {
     calculated_inverse
 }
 
-handleSolveWarningError <- function() {
-    simpleError("cannot calculate inverse due to computational singularity", call = TRUE)
-} 
-
 ## cacheSolve creates a function that calculates the inverse of the given matrix wrapper object (which was returned by makeCacheMatrix$get)
 ## Note: x may pass the singularity test in makeCacheMatrix, but result in an error such as matrix being computationally singular
 cacheSolve <- function(x, ...) {
@@ -99,29 +95,14 @@ cacheSolve <- function(x, ...) {
         warning = function(condition) {
             message("[warning encountered in attempt to calculate inverse]")
             stop(condition)
-            #stop(paste("Warning produced in attempt to calculate inverse:", condition))
         },
         error = function(condition) {
             message("[error encountered in attempt to calculate inverse]")
             stop(condition)
-            #stop(paste("Error produced in attempt to calculate inverse:", condition))
         }
     )
     
     solveResult
-    
-    #calculated_inverse_attempt <- tryCatch.W.E(solve(x$get()))
-    #calculated_inverse_attempt$value
-    #if (!is.matrix(calculated_inverse_attempt$value)) {
-    #    stop(paste("cannot calculate inverse:", try_catch_result$message))
-    #}
-    #x$set_inverse(calculated_inverse_attempt)
-    #calculated_inverse_attempt
-    
-    # original implementation
-    #calculated_inverse <- solve(x$get())
-    #x$set_inverse(calculated_inverse)
-    #calculated_inverse
 }
 
 
