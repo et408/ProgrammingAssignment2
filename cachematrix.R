@@ -1,8 +1,8 @@
 ## This file contains the function pair: makeCacheMatrix and cacheSolve.
 ## These functions can be used to calculate, cache and retrieve the inverse of an invertible matrix.
 ##
-## Usage Example
-## =============
+## Usage Examples
+## ==============
 " # (begin multi-line comment) ========================
 
 > m <- matrix(rnorm(100, 50, 10), nrow = 10, ncol = 10)
@@ -38,7 +38,7 @@
 
 
 
-## makeCacheMatrix creates a function that returns a "matrix" object that can cache its inverse
+## makeCacheMatrix creates a function that returns a matrix wrapper object that can cache its inverse.
 makeCacheMatrix <- function(x = matrix()) {
     
     # checks for invalid matrix (matrix with NA elements, non-square matrix, singular matrix)
@@ -75,8 +75,9 @@ solveCacheWrapperMatrix <- function(x, ...) {
     calculated_inverse
 }
 
-## cacheSolve creates a function that calculates the inverse of the given matrix wrapper object (which was returned by makeCacheMatrix$get)
-## Note: x may pass the singularity test in makeCacheMatrix, but result in an error such as matrix being computationally singular
+## cacheSolve creates a function that calculates the inverse of the given matrix wrapper object (which was returned by makeCacheMatrix$get),
+## or if the matrix wrapper object already cached the inverse, returns the cached inverse.
+## Note: x may pass the singularity test in makeCacheMatrix, but result in an error such as matrix being computationally singular.
 cacheSolve <- function(x, ...) {
 
     # attempt to retrieve cached inverse and return it if possible
